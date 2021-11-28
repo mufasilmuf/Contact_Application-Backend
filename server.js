@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-const PORT = 8085;
 const app = express();
 
 //middleware to acces the data from body.......
@@ -35,6 +34,8 @@ require("./routes/user.routes")(app);
 
 //routes for contacts....
 require("./routes/contact.routes")(app);
+
+const PORT = process.env.PORT || 8085;
 
 //app listen....
 app.listen(PORT, () => {
